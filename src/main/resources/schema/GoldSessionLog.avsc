@@ -1,0 +1,292 @@
+{
+  "type": "record",
+  "name": "GoldSessionLog",
+  "namespace": "schema",
+  "fields": [
+    {
+      "name": "sid",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ana_policy_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "log_type",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "audit_logtypename",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "ast_ip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_region_code",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_region_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "hgid",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "hgname",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "progkey",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_type_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "ast_type_code",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_type_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_admin",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "key_ast",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "engine_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "engine_type",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "engine_ip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "engine_type_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "log_source_ip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logname_type_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "logname_type",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logname_region_code",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "logname_region",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logname_status",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "treasury_log_type",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "co_userid",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "co_user_logname",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "co_user_org_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "co_user_org_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "co_user_mobile",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "treasury_scene_type",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "treasury_scene_id",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "treasury_scene_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "treasury_auth_type",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "access_type",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "apply_time_slot",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "treasury_status",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "special_service_num",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "auth_result",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "sms_content",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "account_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "account",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "account_type_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logtime",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "gather_time",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "sip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "dip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "operate",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "obj_id",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "obj",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "result",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logreason",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "vdata",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "hbasession",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_type_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_type",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_class_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_class",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_item_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_item",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_code",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "reserved4",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "reserved6",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "reserved9",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "res_key",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ana_policy_type",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "ana_policy_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "clientip",
+      "type": [ "null", "string" ],
+      "default": null
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+ndelogCollector.sources = avro_collection_source
+ndelogCollector.channels = APlatformLogChannel AppConnectLogChannel BassLogChannel BomcLogChannel CloudDesktopLogChannel DetourLogChannel EsopLogChannel GoldOperationLogChannel GoldSessionLogChannel IntelligentTerminalLogChannel InternetSessionLogChannel ServerDbOperationLogChannel SmpLogChannel UnixServerSyslogLogChannel VgopLogChannel
+ndeLogCollector.sinks = APlatformLogSink AppConnectLogSink BassLogSink BomcLogSink CloudDesktopLogSink DetourLogSink EsopLogSink GoldOperationLogSink GoldSessionLogSink IntelligentTerminalLogSink InternetSessionLogSink ServerDbOperationLogSink SmpLogSink UnixServerSyslogLogSink VgopLogSink
+
+ndelogCollector.sources.avro_collection_source.type = avro
+ndelogCollector.sources.avro_collection_source.bind = # local server ip
+ndelogCollector.sources.avro_collection_source.port = # local server port
+ndelogCollector.sources.avro_collection_source.channels = APlatformLogChannel AppConnectLogChannel BassLogChannel BomcLogChannel CloudDesktopLogChannel DetourLogChannel EsopLogChannel GoldOperationLogChannel GoldSessionLogChannel IntelligentTerminalLogChannel InternetSessionLogChannel ServerDbOperationLogChannel SmpLogChannel UnixServerSyslogLogChannel VgopLogChannel
+ndelogCollector.sources.avro_collection_source.selector.type = replicating
+ndelogCollector.sources.avro_collection_source.interceptors = i1
+ndelogCollector.sources.avro_collection_source.interceptors.i1.type = host
+ndelogCollector.sources.avro_collection_source.interceptors.i1.hostHeader = hostname
+
+ndelogCollector.channels.APlatformLogChannel.type = memory
+ndelogCollector.channels.APlatformLogChannel.capacity = 100000
+ndelogCollector.channels.APlatformLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.APlatformLogChannel.keep-alive = 5
+
+ndelogCollector.channels.AppConnectLogChannel.type = memory
+ndelogCollector.channels.AppConnectLogChannel.capacity = 100000
+ndelogCollector.channels.AppConnectLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.AppConnectLogChannel.keep-alive = 5
+
+ndelogCollector.channels.BassLogChannel.type = memory
+ndelogCollector.channels.BassLogChannel.capacity = 100000
+ndelogCollector.channels.BassLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.BassLogChannel.keep-alive = 5
+
+ndelogCollector.channels.BomcLogChannel.type = memory
+ndelogCollector.channels.BomcLogChannel.capacity = 100000
+ndelogCollector.channels.BomcLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.BomcLogChannel.keep-alive = 5
+
+ndelogCollector.channels.CloudDesktopLogChannel.type = memory
+ndelogCollector.channels.CloudDesktopLogChannel.capacity = 100000
+ndelogCollector.channels.CloudDesktopLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.CloudDesktopLogChannel.keep-alive = 5
+
+ndelogCollector.channels.DetourLogChannel.type = memory
+ndelogCollector.channels.DetourLogChannel.capacity = 100000
+ndelogCollector.channels.DetourLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.DetourLogChannel.keep-alive = 5
+
+ndelogCollector.channels.EsopLogChannel.type = memory
+ndelogCollector.channels.EsopLogChannel.capacity = 100000
+ndelogCollector.channels.EsopLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.EsopLogChannel.keep-alive = 5
+
+ndelogCollector.channels.GoldOperationLogChannel.type = memory
+ndelogCollector.channels.GoldOperationLogChannel.capacity = 100000
+ndelogCollector.channels.GoldOperationLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.GoldOperationLogChannel.keep-alive = 5
+
+ndelogCollector.channels.GoldSessionLogChannel.type = memory
+ndelogCollector.channels.GoldSessionLogChannel.capacity = 100000
+ndelogCollector.channels.GoldSessionLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.GoldSessionLogChannel.keep-alive = 5
+
+ndelogCollector.channels.IntelligentTerminalLogChannel.type = memory
+ndelogCollector.channels.IntelligentTerminalLogChannel.capacity = 100000
+ndelogCollector.channels.IntelligentTerminalLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.IntelligentTerminalLogChannel.keep-alive = 5
+
+ndelogCollector.channels.InternetSessionLogChannel.type = memory
+ndelogCollector.channels.InternetSessionLogChannel.capacity = 100000
+ndelogCollector.channels.InternetSessionLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.InternetSessionLogChannel.keep-alive = 5
+
+ndelogCollector.channels.ServerDbOperationLogChannel.type = memory
+ndelogCollector.channels.ServerDbOperationLogChannel.capacity = 100000
+ndelogCollector.channels.ServerDbOperationLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.ServerDbOperationLogChannel.keep-alive = 5
+
+ndelogCollector.channels.SmpLogChannel.type = memory
+ndelogCollector.channels.SmpLogChannel.capacity = 100000
+ndelogCollector.channels.SmpLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.SmpLogChannel.keep-alive = 5
+
+ndelogCollector.channels.UnixServerSyslogLogChannel.type = memory
+ndelogCollector.channels.UnixServerSyslogLogChannel.capacity = 100000
+ndelogCollector.channels.UnixServerSyslogLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.UnixServerSyslogLogChannel.keep-alive = 5
+
+ndelogCollector.channels.VgopLogChannel.type = memory
+ndelogCollector.channels.VgopLogChannel.capacity = 100000
+ndelogCollector.channels.VgopLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.VgopLogChannel.keep-alive = 5
+
+ndelogCollector.sinks.APlatformLogSink.type = hdfs
+ndelogCollector.sinks.APlatformLogSink.hdfs.path = /folder_prefix/aplatform_log/%Y/%m/%D/%H
+ndelogCollector.sinks.APlatformLogSink.hdfs.filePrefix = aplatform_log.%{hostname}
+ndelogCollector.sinks.APlatformLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.APlatformLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.APlatformLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.APlatformLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.APlatformLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.APlatformLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.APlatformLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.APlatformLogSink.serializer = me.bayee.datasource.sink.APlatformLogSerializerBuilder
+
+ndelogCollector.sinks.AppConnectLogSink.type = hdfs
+ndelogCollector.sinks.AppConnectLogSink.hdfs.path = /folder_prefix/app_connect_log/%Y/%m/%D/%H
+ndelogCollector.sinks.AppConnectLogSink.hdfs.filePrefix = app_connect_log.%{hostname}
+ndelogCollector.sinks.AppConnectLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.AppConnectLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.AppConnectLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.AppConnectLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.AppConnectLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.AppConnectLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.AppConnectLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.AppConnectLogSink.serializer = me.bayee.datasource.sink.AppConnectLogSerializerBuilder
+
+ndelogCollector.sinks.BassLogSink.type = hdfs
+ndelogCollector.sinks.BassLogSink.hdfs.path = /folder_prefix/bass_log/%Y/%m/%D/%H
+ndelogCollector.sinks.BassLogSink.hdfs.filePrefix = bass_log.%{hostname}
+ndelogCollector.sinks.BassLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.BassLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.BassLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.BassLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.BassLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.BassLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.BassLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.BassLogSink.serializer = me.bayee.datasource.sink.BassLogSerializerBuilder
+
+ndelogCollector.sinks.BomcLogSink.type = hdfs
+ndelogCollector.sinks.BomcLogSink.hdfs.path = /folder_prefix/bomc_log/%Y/%m/%D/%H
+ndelogCollector.sinks.BomcLogSink.hdfs.filePrefix = bomc_log.%{hostname}
+ndelogCollector.sinks.BomcLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.BomcLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.BomcLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.BomcLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.BomcLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.BomcLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.BomcLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.BomcLogSink.serializer = me.bayee.datasource.sink.BomcLogSerializerBuilder
+
+ndelogCollector.sinks.CloudDesktopLogSink.type = hdfs
+ndelogCollector.sinks.CloudDesktopLogSink.hdfs.path = /folder_prefix/cloud_desktop_log/%Y/%m/%D/%H
+ndelogCollector.sinks.CloudDesktopLogSink.hdfs.filePrefix = cloud_desktop_log.%{hostname}
+ndelogCollector.sinks.CloudDesktopLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.CloudDesktopLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.CloudDesktopLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.CloudDesktopLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.CloudDesktopLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.CloudDesktopLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.CloudDesktopLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.CloudDesktopLogSink.serializer = me.bayee.datasource.sink.CloudDesktopLogSerializerBuilder
+
+ndelogCollector.sinks.DetourLogSink.type = hdfs
+ndelogCollector.sinks.DetourLogSink.hdfs.path = /folder_prefix/detour_log/%Y/%m/%D/%H
+ndelogCollector.sinks.DetourLogSink.hdfs.filePrefix = detour_log.%{hostname}
+ndelogCollector.sinks.DetourLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.DetourLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.DetourLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.DetourLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.DetourLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.DetourLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.DetourLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.DetourLogSink.serializer = me.bayee.datasource.sink.DetourLogSerializerBuilder
+
+ndelogCollector.sinks.EsopLogSink.type = hdfs
+ndelogCollector.sinks.EsopLogSink.hdfs.path = /folder_prefix/esop_log/%Y/%m/%D/%H
+ndelogCollector.sinks.EsopLogSink.hdfs.filePrefix = esop_log.%{hostname}
+ndelogCollector.sinks.EsopLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.EsopLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.EsopLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.EsopLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.EsopLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.EsopLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.EsopLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.EsopLogSink.serializer = me.bayee.datasource.sink.EsopLogSerializerBuilder
+
+ndelogCollector.sinks.GoldOperationLogSink.type = hdfs
+ndelogCollector.sinks.GoldOperationLogSink.hdfs.path = /folder_prefix/gold_operation_log/%Y/%m/%D/%H
+ndelogCollector.sinks.GoldOperationLogSink.hdfs.filePrefix = gold_operation_log.%{hostname}
+ndelogCollector.sinks.GoldOperationLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.GoldOperationLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.GoldOperationLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.GoldOperationLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.GoldOperationLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.GoldOperationLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.GoldOperationLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.GoldOperationLogSink.serializer = me.bayee.datasource.sink.GoldOperationLogSerializerBuilder
+
+ndelogCollector.sinks.GoldSessionLogSink.type = hdfs
+ndelogCollector.sinks.GoldSessionLogSink.hdfs.path = /folder_prefix/gold_session_log/%Y/%m/%D/%H
+ndelogCollector.sinks.GoldSessionLogSink.hdfs.filePrefix = gold_session_log.%{hostname}
+ndelogCollector.sinks.GoldSessionLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.GoldSessionLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.GoldSessionLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.GoldSessionLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.GoldSessionLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.GoldSessionLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.GoldSessionLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.GoldSessionLogSink.serializer = me.bayee.datasource.sink.GoldSessionLogSerializerBuilder
+
+ndelogCollector.sinks.IntelligentTerminalLogSink.type = hdfs
+ndelogCollector.sinks.IntelligentTerminalLogSink.hdfs.path = /folder_prefix/intelligent_terminal_log/%Y/%m/%D/%H
+ndelogCollector.sinks.IntelligentTerminalLogSink.hdfs.filePrefix = intelligent_terminal_log.%{hostname}
+ndelogCollector.sinks.IntelligentTerminalLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.IntelligentTerminalLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.IntelligentTerminalLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.IntelligentTerminalLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.IntelligentTerminalLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.IntelligentTerminalLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.IntelligentTerminalLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.IntelligentTerminalLogSink.serializer = me.bayee.datasource.sink.IntelligentTerminalLogSerializerBuilder
+
+ndelogCollector.sinks.InternetSessionLogSink.type = hdfs
+ndelogCollector.sinks.InternetSessionLogSink.hdfs.path = /folder_prefix/internet_session_log/%Y/%m/%D/%H
+ndelogCollector.sinks.InternetSessionLogSink.hdfs.filePrefix = internet_session_log.%{hostname}
+ndelogCollector.sinks.InternetSessionLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.InternetSessionLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.InternetSessionLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.InternetSessionLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.InternetSessionLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.InternetSessionLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.InternetSessionLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.InternetSessionLogSink.serializer = me.bayee.datasource.sink.InternetSessionLogSerializerBuilder
+
+ndelogCollector.sinks.ServerDbOperationLogSink.type = hdfs
+ndelogCollector.sinks.ServerDbOperationLogSink.hdfs.path = /folder_prefix/server_db_operation_log/%Y/%m/%D/%H
+ndelogCollector.sinks.ServerDbOperationLogSink.hdfs.filePrefix = server_db_operation_log.%{hostname}
+ndelogCollector.sinks.ServerDbOperationLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.ServerDbOperationLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.ServerDbOperationLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.ServerDbOperationLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.ServerDbOperationLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.ServerDbOperationLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.ServerDbOperationLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.ServerDbOperationLogSink.serializer = me.bayee.datasource.sink.ServerDbOperationLogSerializerBuilder
+
+ndelogCollector.sinks.SmpLogSink.type = hdfs
+ndelogCollector.sinks.SmpLogSink.hdfs.path = /folder_prefix/smp_log/%Y/%m/%D/%H
+ndelogCollector.sinks.SmpLogSink.hdfs.filePrefix = smp_log.%{hostname}
+ndelogCollector.sinks.SmpLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.SmpLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.SmpLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.SmpLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.SmpLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.SmpLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.SmpLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.SmpLogSink.serializer = me.bayee.datasource.sink.SmpLogSerializerBuilder
+
+ndelogCollector.sinks.UnixServerSyslogLogSink.type = hdfs
+ndelogCollector.sinks.UnixServerSyslogLogSink.hdfs.path = /folder_prefix/unix_server_syslog_log/%Y/%m/%D/%H
+ndelogCollector.sinks.UnixServerSyslogLogSink.hdfs.filePrefix = unix_server_syslog_log.%{hostname}
+ndelogCollector.sinks.UnixServerSyslogLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.UnixServerSyslogLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.UnixServerSyslogLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.UnixServerSyslogLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.UnixServerSyslogLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.UnixServerSyslogLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.UnixServerSyslogLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.UnixServerSyslogLogSink.serializer = me.bayee.datasource.sink.UnixServerSyslogLogSerializerBuilder
+
+ndelogCollector.sinks.VgopLogSink.type = hdfs
+ndelogCollector.sinks.VgopLogSink.hdfs.path = /folder_prefix/vgop_log/%Y/%m/%D/%H
+ndelogCollector.sinks.VgopLogSink.hdfs.filePrefix = vgop_log.%{hostname}
+ndelogCollector.sinks.VgopLogSink.hdfs.fileType = DataStream
+ndelogCollector.sinks.VgopLogSink.hdfs.fileSuffix = .avro
+ndelogCollector.sinks.VgopLogSink.hdfs.rollInterval = 0
+ndelogCollector.sinks.VgopLogSink.hdfs.rollSize = 0
+ndelogCollector.sinks.VgopLogSink.hdfs.rollCount = 0
+ndelogCollector.sinks.VgopLogSink.hdfs.idleTimeout = 120
+ndelogCollector.sinks.VgopLogSink.serializer.compressionCodec = snappy
+ndelogCollector.sinks.VgopLogSink.serializer = me.bayee.datasource.sink.VgopLogSerializerBuilder

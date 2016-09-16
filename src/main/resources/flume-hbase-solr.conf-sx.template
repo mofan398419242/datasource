@@ -1,0 +1,143 @@
+ndelogCollector.sources  = tcpSource udpSource
+ndelogCollector.channels = hbase_iamLogChannel hbase_treasureLogChannel hbase_auditLogChannel solr_iamLogChannel solr_treasureLogChannel solr_auditLogChannel avro_forward_channel
+ndelogCollector.sinks    = hbase_iamLogSink hbase_treasureLogSink hbase_auditLogSink solr_iamLogSink solr_treasureLogSink solr_auditLogSink avro_forward_sink
+
+ndelogCollector.sources.tcpSource.type     = com.boco.nde.flume.source.NdeLogTCPSource
+ndelogCollector.sources.tcpSource.bind     = 0.0.0.0
+ndelogCollector.sources.tcpSource.port     = 8434
+ndelogCollector.sources.tcpSource.channels = hbase_iamLogChannel hbase_treasureLogChannel hbase_auditLogChannel solr_iamLogChannel solr_treasureLogChannel solr_auditLogChannel avro_forward_channel
+ndelogCollector.sources.tcpSource.selector.type = multiplexing
+ndelogCollector.sources.tcpSource.selector.header = logtype
+ndelogCollector.sources.tcpSource.selector.mapping.hbase_iamlog      	= hbase_iamLogChannel avro_forward_channel
+ndelogCollector.sources.tcpSource.selector.mapping.hbase_treasurelog    = hbase_treasureLogChannel avro_forward_channel
+ndelogCollector.sources.tcpSource.selector.mapping.hbase_auditlog       = hbase_auditLogChannel avro_forward_channel
+ndelogCollector.sources.tcpSource.selector.mapping.solr_iamlog    		= solr_iamLogChannel
+ndelogCollector.sources.tcpSource.selector.mapping.solr_treasurelog   	= solr_treasureLogChannel
+ndelogCollector.sources.tcpSource.selector.mapping.solr_auditlog       	= solr_auditLogChannel
+ndelogCollector.sources.tcpSource.selector.default         				= hbase_auditLogChannel avro_forward_channel
+
+
+ndelogCollector.sources.udpSource.type     = com.boco.nde.flume.source.NdeLogUDPSource
+ndelogCollector.sources.udpSource.bind     = 0.0.0.0
+ndelogCollector.sources.udpSource.port     = 8434
+ndelogCollector.sources.udpSource.channels = hbase_iamLogChannel hbase_treasureLogChannel hbase_auditLogChannel solr_iamLogChannel solr_treasureLogChannel solr_auditLogChannel avro_forward_channel
+ndelogCollector.sources.udpSource.selector.type = multiplexing
+ndelogCollector.sources.udpSource.selector.header          = logtype
+ndelogCollector.sources.udpSource.selector.mapping.hbase_iamlog      	= hbase_iamLogChannel avro_forward_channel
+ndelogCollector.sources.udpSource.selector.mapping.hbase_treasurelog    = hbase_treasureLogChannel avro_forward_channel
+ndelogCollector.sources.udpSource.selector.mapping.hbase_auditlog       = hbase_auditLogChannel avro_forward_channel
+ndelogCollector.sources.udpSource.selector.mapping.solr_iamlog      	= solr_iamLogChannel
+ndelogCollector.sources.udpSource.selector.mapping.solr_treasurelog     = solr_treasureLogChannel
+ndelogCollector.sources.udpSource.selector.mapping.solr_auditlog       	= solr_auditLogChannel
+ndelogCollector.sources.udpSource.selector.default         				= hbase_auditLogChannel avro_forward_channel
+
+#指定channel类型，本例为内存
+ndelogCollector.channels.hbase_iamLogChannel.type       = memory
+#指定channel存储数据的能力，本例为1000000条。
+ndelogCollector.channels.hbase_iamLogChannel.capacity   = 100000
+#每个事务发给sink的最大event数
+ndelogCollector.channels.hbase_iamLogChannel.transactionCapacity = 1000
+#指定channel存活时间5s，超过设定值将日出event
+ndelogCollector.channels.hbase_iamLogChannel.keep-alive = 5
+
+ndelogCollector.channels.hbase_treasureLogChannel.type       = memory
+ndelogCollector.channels.hbase_treasureLogChannel.capacity   = 100000
+ndelogCollector.channels.hbase_treasureLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.hbase_treasureLogChannel.keep-alive = 5
+
+ndelogCollector.channels.hbase_auditLogChannel.type       = memory
+ndelogCollector.channels.hbase_auditLogChannel.capacity   = 100000
+ndelogCollector.channels.hbase_auditLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.hbase_auditLogChannel.keep-alive = 5
+
+ndelogCollector.channels.solr_iamLogChannel.type       = memory
+ndelogCollector.channels.solr_iamLogChannel.capacity   = 100000
+ndelogCollector.channels.solr_iamLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.solr_iamLogChannel.keep-alive = 5
+
+ndelogCollector.channels.solr_treasureLogChannel.type       = memory
+ndelogCollector.channels.solr_treasureLogChannel.capacity   = 100000
+ndelogCollector.channels.solr_treasureLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.solr_treasureLogChannel.keep-alive = 5
+
+ndelogCollector.channels.solr_auditLogChannel.type       = memory
+ndelogCollector.channels.solr_auditLogChannel.capacity   = 100000
+ndelogCollector.channels.solr_auditLogChannel.transactionCapacity = 1000
+ndelogCollector.channels.solr_auditLogChannel.keep-alive = 5
+
+ndelogCollector.channels.avro_forward_channel.type = memory
+ndelogCollector.channels.avro_forward_channel.capacity = 100000
+ndelogCollector.channels.avro_forward_channel.transactionCapacity = 1000
+ndelogCollector.channels.avro_forward_channel.keep-alive = 5
+
+#hbase 的 Sink设置
+ndelogCollector.sinks.hbase_iamLogSink.type         = org.apache.flume.sink.hbase.HBaseSink
+ndelogCollector.sinks.hbase_iamLogSink.channel      = hbase_iamLogChannel
+ndelogCollector.sinks.hbase_iamLogSink.table        = t_iamlog
+ndelogCollector.sinks.hbase_iamLogSink.columnFamily = cf
+#batchSize与batchDurationMillis采取优先原则，哪个参数值先到，哪个先处理。
+#当channel中存在1000条数据开始处理
+ndelogCollector.sinks.hbase_iamLogSink.batchSize    = 1000
+#当channel中数据存在超过1000ms时开始处理
+ndelogCollector.sinks.hbase_iamLogSink.batchDurationMillis = 1000
+ndelogCollector.sinks.hbase_iamLogSink.enableWal    = true
+ndelogCollector.sinks.hbase_iamLogSink.serializer   = com.boco.nde.flume.sink.AuditLogHbaseEventSerializerforfield
+
+ndelogCollector.sinks.hbase_treasureLogSink.type         = org.apache.flume.sink.hbase.HBaseSink
+ndelogCollector.sinks.hbase_treasureLogSink.channel      = hbase_treasureLogChannel
+ndelogCollector.sinks.hbase_treasureLogSink.table        = t_treasurelog
+ndelogCollector.sinks.hbase_treasureLogSink.columnFamily = cf
+ndelogCollector.sinks.hbase_treasureLogSink.batchSize    = 1000
+ndelogCollector.sinks.hbase_treasureLogSink.batchDurationMillis = 10000
+ndelogCollector.sinks.hbase_treasureLogSink.enableWal    = true
+ndelogCollector.sinks.hbase_treasureLogSink.serializer   = com.boco.nde.flume.sink.AuditLogHbaseEventSerializerforfield
+
+ndelogCollector.sinks.hbase_auditLogSink.type         = org.apache.flume.sink.hbase.HBaseSink
+ndelogCollector.sinks.hbase_auditLogSink.channel      = hbase_auditLogChannel
+ndelogCollector.sinks.hbase_auditLogSink.table        = t_auditlog
+ndelogCollector.sinks.hbase_auditLogSink.columnFamily = cf
+ndelogCollector.sinks.hbase_auditLogSink.batchSize    = 1000
+ndelogCollector.sinks.hbase_auditLogSink.batchDurationMillis = 10000
+ndelogCollector.sinks.hbase_auditLogSink.enableWal    = true
+ndelogCollector.sinks.hbase_auditLogSink.serializer   = com.boco.nde.flume.sink.AuditLogHbaseEventSerializerforfield
+
+#solr 的 Sink设置
+ndelogCollector.sinks.solr_iamLogSink.type          = org.apache.flume.sink.solr.morphline.MorphlineSolrSink
+ndelogCollector.sinks.solr_iamLogSink.channel       = solr_iamLogChannel
+ndelogCollector.sinks.solr_iamLogSink.morphlineFile = morphlines.conf
+ndelogCollector.sinks.solr_iamLogSink.morphlineId   = morphline1
+ndelogCollector.sinks.solr_iamLogSink.batchSize     = 1000
+ndelogCollector.sinks.solr_iamLogSink.batchDurationMillis = 10000
+ndelogCollector.sinks.solr_iamLogSink.handlerClass  = com.boco.nde.flume.sink.AuditLogMorphlineHandlerImpl
+ndelogCollector.sinks.solr_iamLogSink.morphlineVariable.SOLR_COLLECTION = iamlog_collection
+ndelogCollector.sinks.solr_iamLogSink.store_attachment_body = false
+ndelogCollector.sinks.solr_iamLogSink.isProductionMode = true
+ndelogCollector.sinks.solr_iamLogSink.isIgnoringRecoverableExceptions = true
+
+ndelogCollector.sinks.solr_treasureLogSink.type          = org.apache.flume.sink.solr.morphline.MorphlineSolrSink
+ndelogCollector.sinks.solr_treasureLogSink.channel       = solr_treasureLogChannel
+ndelogCollector.sinks.solr_treasureLogSink.morphlineFile = morphlines.conf
+ndelogCollector.sinks.solr_treasureLogSink.morphlineId   = morphline1
+ndelogCollector.sinks.solr_treasureLogSink.batchSize     = 1000
+ndelogCollector.sinks.solr_treasureLogSink.batchDurationMillis = 10000
+ndelogCollector.sinks.solr_treasureLogSink.handlerClass  = com.boco.nde.flume.sink.AuditLogMorphlineHandlerImpl
+ndelogCollector.sinks.solr_treasureLogSink.morphlineVariable.SOLR_COLLECTION = treasurelog_collection
+ndelogCollector.sinks.solr_treasureLogSink.store_attachment_body = false
+ndelogCollector.sinks.solr_treasureLogSink.isProductionMode = true
+ndelogCollector.sinks.solr_treasureLogSink.isIgnoringRecoverableExceptions = true
+
+ndelogCollector.sinks.solr_auditLogSink.type          = org.apache.flume.sink.solr.morphline.MorphlineSolrSink
+ndelogCollector.sinks.solr_auditLogSink.channel       = solr_auditLogChannel
+ndelogCollector.sinks.solr_auditLogSink.morphlineFile = morphlines.conf
+ndelogCollector.sinks.solr_auditLogSink.morphlineId   = morphline1
+ndelogCollector.sinks.solr_auditLogSink.batchSize     = 1000
+ndelogCollector.sinks.solr_auditLogSink.batchDurationMillis = 10000
+ndelogCollector.sinks.solr_auditLogSink.handlerClass  = com.boco.nde.flume.sink.AuditLogMorphlineHandlerImpl
+ndelogCollector.sinks.solr_auditLogSink.morphlineVariable.SOLR_COLLECTION = auditlog_collection
+ndelogCollector.sinks.solr_auditLogSink.store_attachment_body = false
+ndelogCollector.sinks.solr_auditLogSink.isProductionMode = true
+ndelogCollector.sinks.solr_auditLogSink.isIgnoringRecoverableExceptions = true
+
+ndelogCollector.sinks.avro_forward_sink.type = avro
+ndelogCollector.sinks.avro_forward_sink.hostname = # need target server ip
+ndelogCollector.sinks.avro_forward_sink.port = # need target server port

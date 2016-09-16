@@ -1,0 +1,24 @@
+httpTraffic.source = fileSource
+httpTraffic.channels = HttpTrafficLogChannel
+httpTraffic.sinks = HttpTrafficLogSink
+
+httpTraffic.sources.fileSource.type = spooldir
+httpTraffic.sources.fileSource.channels = HttpTrafficLogChannel
+httpTraffic.sources.fileSource.spoolDir = /your_directory/
+httpTraffic.sources.fileSource.fileHeader = false
+
+httpTraffic.channels.HttpTrafficLogChannel.type = memory
+httpTraffic.channels.HttpTrafficLogChannel.capacity = 100000
+httpTraffic.channels.HttpTrafficLogChannel.transactionCapacity = 1000
+httpTraffic.channels.HttpTrafficLogChannel.keep-alive = 5
+
+httpTraffic.sinks.HttpTrafficLogSink.type = hdfs
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.path = /folder_prefix/http_traffic_log/%Y/%m/%D/%H
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.filePrefix = http_traffic_log.%{host}
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.fileType = DataStream
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.fileSuffix = .avro
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.rollInterval = 0
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.rollSize = 0
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.rollCount = 0
+httpTraffic.sinks.HttpTrafficLogSink.serializer.compressionCodec = snappy
+httpTraffic.sinks.HttpTrafficLogSink.serializer = my.bayee.datasource.sink.HttpTrafficLogSerializer

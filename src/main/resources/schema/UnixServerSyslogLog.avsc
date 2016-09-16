@@ -1,0 +1,196 @@
+{
+  "type": "record",
+  "name": "UnixServerSyslogLog",
+  "namespace": "schema",
+  "fields": [
+    {
+      "name": "sid",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ana_policy_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "log_type",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "audit_logtypeid",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "audit_logtypename",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "ast_ip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_region_code",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_region_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "hgid",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "hgname",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "progkey",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_type_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "ast_type_code",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_type_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_admin",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "key_ast",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "engine_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "engine_type",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "engine_ip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "engine_type_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logname",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "account_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "account",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "account_type_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logtime",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "gather_time",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "sip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "dip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "operate",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "result",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "vdata",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "facility",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "severity",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_type_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_type",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_class_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_class",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_item_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_item",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_code",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_key_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_key",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "res_key",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "clientip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logclass",
+      "type": [ "null", "int" ],
+      "default": null
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "type": "record",
+  "name": "EsopLog",
+  "namespace": "schema",
+  "fields": [
+    {
+      "name": "sid",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ana_policy_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "auit_logtypeid",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "audit_logtypename",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "ast_ip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_region_code",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_region_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "hgid",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "hgname",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "progkey",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_type_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "ast_type_code",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_type_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ast_admin",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "key_ast",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "engine_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "engine_type",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "engine_ip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "engine_type_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "log_source_ip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "userid",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "logname",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "uname",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ouid",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "ouname",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logname_type_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "logname_type",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logname_region_code",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logname_region",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logname_status",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "account_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "account",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logtime",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "gather_time",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "sip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "sport",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "dip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "dport",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "risk_level",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "operate",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "obj_id",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "obj",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "result",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "processname",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "vdata",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_type_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_type",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_class_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_class",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_item_id",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "op_item",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "op_code",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "reserved0",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "reserved3",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "reserved4",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "ana_policy_type",
+      "type": [ "null", "int" ],
+      "default": null
+    }, {
+      "name": "ana_policy_name",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "clientip",
+      "type": [ "null", "string" ],
+      "default": null
+    }, {
+      "name": "logclass",
+      "type": [ "null", "int" ],
+      "default": null
+    }
+  ]
+}
