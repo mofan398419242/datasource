@@ -139,5 +139,6 @@ ndelogCollector.sinks.solr_auditLogSink.isProductionMode = true
 ndelogCollector.sinks.solr_auditLogSink.isIgnoringRecoverableExceptions = true
 
 ndelogCollector.sinks.avro_forward_sink.type = avro
-ndelogCollector.sinks.avro_forward_sink.hostname = # need target server ip
-ndelogCollector.sinks.avro_forward_sink.port = # need target server port
+ndelogCollector.sinks.avro_forward_sink.channel = avro_forward_channel
+ndelogCollector.sinks.avro_forward_sink.hostname = 10.210.118.40
+ndelogCollector.sinks.avro_forward_sink.port = 12321

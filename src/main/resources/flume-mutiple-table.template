@@ -3,8 +3,8 @@ ndelogCollector.channels = APlatformLogChannel AppConnectLogChannel BassLogChann
 ndeLogCollector.sinks = APlatformLogSink AppConnectLogSink BassLogSink BomcLogSink CloudDesktopLogSink DetourLogSink EsopLogSink GoldOperationLogSink GoldSessionLogSink IntelligentTerminalLogSink InternetSessionLogSink ServerDbOperationLogSink SmpLogSink UnixServerSyslogLogSink VgopLogSink
 
 ndelogCollector.sources.avro_collection_source.type = avro
-ndelogCollector.sources.avro_collection_source.bind = # local server ip
-ndelogCollector.sources.avro_collection_source.port = # local server port
+ndelogCollector.sources.avro_collection_source.bind = 10.210.118.40
+ndelogCollector.sources.avro_collection_source.port = 12321
 ndelogCollector.sources.avro_collection_source.channels = APlatformLogChannel AppConnectLogChannel BassLogChannel BomcLogChannel CloudDesktopLogChannel DetourLogChannel EsopLogChannel GoldOperationLogChannel GoldSessionLogChannel IntelligentTerminalLogChannel InternetSessionLogChannel ServerDbOperationLogChannel SmpLogChannel UnixServerSyslogLogChannel VgopLogChannel
 ndelogCollector.sources.avro_collection_source.selector.type = replicating
 ndelogCollector.sources.avro_collection_source.interceptors = i1
