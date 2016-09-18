@@ -1,4 +1,4 @@
-httpTraffic.source = fileSource
+httpTraffic.sources = fileSource
 httpTraffic.channels = HttpTrafficLogChannel
 httpTraffic.sinks = HttpTrafficLogSink
 
@@ -6,6 +6,10 @@ httpTraffic.sources.fileSource.type = spooldir
 httpTraffic.sources.fileSource.channels = HttpTrafficLogChannel
 httpTraffic.sources.fileSource.spoolDir = /your_directory/
 httpTraffic.sources.fileSource.fileHeader = false
+httpTraffic.sources.fileSource.interceptors = i1
+httpTraffic.sources.fileSource.interceptors.i1.type = host
+httpTraffic.sources.fileSource.interceptors.i1.hostHeader = hostname
+httpTraffic.sources.fileSource.deserializer.maxLineLength = 32768
 
 httpTraffic.channels.HttpTrafficLogChannel.type = memory
 httpTraffic.channels.HttpTrafficLogChannel.capacity = 100000
@@ -13,12 +17,14 @@ httpTraffic.channels.HttpTrafficLogChannel.transactionCapacity = 1000
 httpTraffic.channels.HttpTrafficLogChannel.keep-alive = 5
 
 httpTraffic.sinks.HttpTrafficLogSink.type = hdfs
-httpTraffic.sinks.HttpTrafficLogSink.hdfs.path = /folder_prefix/http_traffic_log/%Y/%m/%D/%H
-httpTraffic.sinks.HttpTrafficLogSink.hdfs.filePrefix = http_traffic_log.%{host}
+httpTraffic.sinks.HttpTrafficLogSink.channel = HttpTrafficLogChannel
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.path = /folder_prefix/http_traffic_log/%Y/%m/%d/%H
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.useLocalTimeStamp = true
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.filePrefix = http_traffic_log.%{hostname}
 httpTraffic.sinks.HttpTrafficLogSink.hdfs.fileType = DataStream
 httpTraffic.sinks.HttpTrafficLogSink.hdfs.fileSuffix = .avro
 httpTraffic.sinks.HttpTrafficLogSink.hdfs.rollInterval = 0
 httpTraffic.sinks.HttpTrafficLogSink.hdfs.rollSize = 0
 httpTraffic.sinks.HttpTrafficLogSink.hdfs.rollCount = 0
 httpTraffic.sinks.HttpTrafficLogSink.serializer.compressionCodec = snappy
-httpTraffic.sinks.HttpTrafficLogSink.serializer = my.bayee.datasource.sink.HttpTrafficLogSerializer
+httpTraffic.sinks.HttpTrafficLogSink.serializer = me.bayee.datasource.sink.HttpTrafficLogSerializerBuilder
