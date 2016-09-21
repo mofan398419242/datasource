@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "name": "4APlatformLog",
+  "name": "APlatformLog",
   "namespace": "schema",
   "fields": [
     {
