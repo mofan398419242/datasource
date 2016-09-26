@@ -18,7 +18,7 @@ httpTraffic.channels.HttpTrafficLogChannel.keep-alive = 5
 
 httpTraffic.sinks.HttpTrafficLogSink.type = hdfs
 httpTraffic.sinks.HttpTrafficLogSink.channel = HttpTrafficLogChannel
-httpTraffic.sinks.HttpTrafficLogSink.hdfs.path = /folder_prefix/http_traffic_log/%Y/%m/%d/%H
+httpTraffic.sinks.HttpTrafficLogSink.hdfs.path = /user/Bdsec/http_traffic_log/%Y/%m/%d/%H
 httpTraffic.sinks.HttpTrafficLogSink.hdfs.useLocalTimeStamp = true
 httpTraffic.sinks.HttpTrafficLogSink.hdfs.filePrefix = http_traffic_log.%{hostname}
 httpTraffic.sinks.HttpTrafficLogSink.hdfs.fileType = DataStream

@@ -3,7 +3,7 @@ ndelogCollector.channels = hbase_iamLogChannel hbase_treasureLogChannel hbase_au
 ndelogCollector.sinks    = hbase_iamLogSink hbase_treasureLogSink hbase_auditLogSink solr_iamLogSink solr_treasureLogSink solr_auditLogSink avro_forward_sink
 
 ndelogCollector.sources.tcpSource.type     = com.boco.nde.flume.source.NdeLogTCPSource
-ndelogCollector.sources.tcpSource.bind     = 0.0.0.0
+ndelogCollector.sources.tcpSource.bind     = 10.210.118.40
 ndelogCollector.sources.tcpSource.port     = 8434
 ndelogCollector.sources.tcpSource.channels = hbase_iamLogChannel hbase_treasureLogChannel hbase_auditLogChannel solr_iamLogChannel solr_treasureLogChannel solr_auditLogChannel avro_forward_channel
 ndelogCollector.sources.tcpSource.selector.type = multiplexing
@@ -18,8 +18,8 @@ ndelogCollector.sources.tcpSource.selector.default         				= hbase_auditLogC
 
 
 ndelogCollector.sources.udpSource.type     = com.boco.nde.flume.source.NdeLogUDPSource
-ndelogCollector.sources.udpSource.bind     = 0.0.0.0
-ndelogCollector.sources.udpSource.port     = 8434
+ndelogCollector.sources.udpSource.bind     = 10.210.118.40
+ndelogCollector.sources.udpSource.port     = 8433
 ndelogCollector.sources.udpSource.channels = hbase_iamLogChannel hbase_treasureLogChannel hbase_auditLogChannel solr_iamLogChannel solr_treasureLogChannel solr_auditLogChannel avro_forward_channel
 ndelogCollector.sources.udpSource.selector.type = multiplexing
 ndelogCollector.sources.udpSource.selector.header          = logtype
