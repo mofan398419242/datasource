@@ -30,7 +30,7 @@ class HttpTrafficLogSerializer(context: Context, out: OutputStream) extends Even
 
   override def write(event: Event): Unit = {
     val record = new GenericData.Record(schema)
-    val splits = new String(event.getBody).split(",").map(_.replace("\"",""))
+    val splits = new String(event.getBody).split("\",\"").map(_.replace("\"",""))
     record.put("visit_time",splits(0))
     record.put("warden",splits(1))
     record.put("http_code",splits(2).toInt)
