@@ -233,7 +233,7 @@
       "default": null
     }, {
       "name": "flownum",
-      "type": [ "null", "double" ],
+      "type": [ "null", "float" ],
       "default": null
     }, {
       "name": "recnum",
