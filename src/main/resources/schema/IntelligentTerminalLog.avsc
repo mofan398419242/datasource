@@ -12,7 +12,7 @@
       "type": [ "null", "int" ],
       "default": null
     }, {
-      "name": "auit_logtypeid",
+      "name": "audit_logtypeid",
       "type": [ "null", "int" ],
       "default": null
     }, {
